@@ -2,11 +2,14 @@
 
 let globalTeardown
 const browser = global.bsBrowser
+const chromedriver = require('chromedriver')
 
 if (process.env.BROWSERSTACK) {
-  globalTeardown = () => global.browserStackLocal.killAllProcesses(() => {})
+  globalTeardown = () => {
+  //  chromedriver.stop();
+    global.browserStackLocal.killAllProcesses(() => {})
+  }
 } else {
-  const chromedriver = require('chromedriver')
   globalTeardown = () => chromedriver.stop()
 }
 
@@ -21,6 +24,7 @@ module.exports = async () => {
         if (!window) continue
         await browser.window(window)
         await browser.origClose()
+        await browser.quit();
       }
     } catch (_) {}
   }
