@@ -22,7 +22,7 @@ module.exports = async () => {
         if (!window) continue
         await browser.window(window)
         await browser.origClose()
-        await browser.quit();
+        await browser.quit()
       }
     } catch (_) {}
   }
