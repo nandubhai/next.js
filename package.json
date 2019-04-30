@@ -111,8 +111,5 @@
   },
   "engines": {
     "node": ">= 8.0.0"
-  },
-  "dependencies": {
-    "next": "8.1.0"
   }
 }
