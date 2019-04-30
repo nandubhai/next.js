@@ -14,8 +14,6 @@ if (process.env.BROWSERSTACK) {
 }
 
 module.exports = async () => {
-  await globalTeardown()
-
   if (browser) {
     // Close all remaining browser windows
     try {
@@ -28,4 +26,5 @@ module.exports = async () => {
       }
     } catch (_) {}
   }
+  await globalTeardown()
 }
