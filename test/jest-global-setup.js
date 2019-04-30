@@ -5,7 +5,8 @@ if (process.env.BROWSERSTACK) {
   const { Local } = require('browserstack-local')
   const browserStackLocal = new Local()
   const localBrowserStackOpts = {
-    key: process.env.BROWSERSTACK_ACCESS_KEY
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    localIdentifier: new Date().getTime()
   }
   global.browserStackLocal = browserStackLocal
 

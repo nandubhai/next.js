@@ -42,9 +42,11 @@ if (isBrowserStack) {
     'os_version': '10',
     'browser': 'Firefox'
   }
+  console.log('IDENTIFIER IS', global.browserStackLocal.localIdentifierFlag)
   const sharedOpts = {
     'browserstack.local': true,
-    'browserstack.video': true
+    'browserstack.video': true,
+    'browserstack.localIdentifier':global.browserStackLocal.localIdentifierFlag
   }
 
   browserOptions = {
