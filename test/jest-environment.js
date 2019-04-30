@@ -122,7 +122,6 @@ class CustomEnvironment extends NodeEnvironment {
           } catch (_) {}
         }
       }
-      deviceIP = 'bs-local.com'
     }
     this.global.browserName = BROWSER_NAME
     this.global.isBrowserStack = isBrowserStack
